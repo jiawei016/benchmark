@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>CodeBenchmark.src.String.StringBenchmark-20230830-015737</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.7, Windows 10 (10.0.19045.3324/22H2/2022Update)
+Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+.NET SDK 7.0.400
+  [Host]     : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>           Method</th><th>N</th><th>  Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>TestStringBuilder</td><td>100</td><td>1,553.8 ns</td><td>24.74 ns</td><td>25.41 ns</td><td>1.1959</td><td>3752 B</td>
+</tr><tr><td>TestStringConcat</td><td>100</td><td>1,848.1 ns</td><td>35.33 ns</td><td>45.94 ns</td><td>2.7027</td><td>8480 B</td>
+</tr><tr><td>TestStringPlusOperator</td><td>100</td><td>3,922.7 ns</td><td>78.11 ns</td><td>150.48 ns</td><td>7.5607</td><td>23736 B</td>
+</tr><tr><td>TestStringInterpolation</td><td>100</td><td>2,573.4 ns</td><td>51.33 ns</td><td>89.91 ns</td><td>2.7008</td><td>8480 B</td>
+</tr><tr><td>TestStringStringFormat</td><td>100</td><td>6,163.0 ns</td><td>122.40 ns</td><td>183.20 ns</td><td>2.7008</td><td>8480 B</td>
+</tr><tr><td>TestStringReplace</td><td>100</td><td>860.7 ns</td><td>17.04 ns</td><td>28.47 ns</td><td>-</td><td>-</td>
+</tr><tr><td>TestStringRegex</td><td>100</td><td>144,159.9 ns</td><td>2,750.09 ns</td><td>3,671.29 ns</td><td>3.4180</td><td>11200 B</td>
+</tr></tbody></table>
+</body>
+</html>
