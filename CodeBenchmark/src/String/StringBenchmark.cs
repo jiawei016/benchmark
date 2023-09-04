@@ -77,6 +77,37 @@ namespace CodeBenchmark.src.String
         }
 
         [Benchmark]
+        public void TestStringSubstring()
+        {
+            string input = "This is text with far too much ";
+            int startIndex = 7;
+            int endIndex = input.Length - 7;
+            for (int i = 0; i < N; i++)
+            {
+                input = input.Substring(startIndex, endIndex);
+            }
+        }
+
+        [Benchmark]
+        public void TestStringSubstringLoop()
+        {
+            string input = "This is text with far too much ";
+            int startIndex = 7;
+            int endIndex = input.Length - 7;
+            for (int i = 0; i < N; i++)
+            {
+                string _getSrtring = "";
+                for (int j = 0; j < input.Length; j++)
+                {
+                    if (j > startIndex && j < endIndex)
+                    {
+                        _getSrtring = string.Concat(input[j]);
+                    }
+                }
+            }
+        }
+
+        [Benchmark]
         public void TestStringRegex()
         {
             string input = "This is   text with   far  too   much   " +

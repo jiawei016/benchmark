@@ -8,12 +8,17 @@ Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical co
 
 
 ```
-|                  Method |   N |         Mean |       Error |      StdDev |   Gen0 | Allocated |
-|------------------------ |---- |-------------:|------------:|------------:|-------:|----------:|
-|       TestStringBuilder | 100 |   1,553.8 ns |    24.74 ns |    25.41 ns | 1.1959 |    3752 B |
-|        TestStringConcat | 100 |   1,848.1 ns |    35.33 ns |    45.94 ns | 2.7027 |    8480 B |
-|  TestStringPlusOperator | 100 |   3,922.7 ns |    78.11 ns |   150.48 ns | 7.5607 |   23736 B |
-| TestStringInterpolation | 100 |   2,573.4 ns |    51.33 ns |    89.91 ns | 2.7008 |    8480 B |
-|  TestStringStringFormat | 100 |   6,163.0 ns |   122.40 ns |   183.20 ns | 2.7008 |    8480 B |
-|       TestStringReplace | 100 |     860.7 ns |    17.04 ns |    28.47 ns |      - |         - |
-|         TestStringRegex | 100 | 144,159.9 ns | 2,750.09 ns | 3,671.29 ns | 3.4180 |   11200 B |
+|                  Method |   N |         Mean |       Error |       StdDev |       Median |    Gen0 | Allocated |
+|------------------------ |---- |-------------:|------------:|-------------:|-------------:|--------:|----------:|
+|       TestStringBuilder | 100 |   1,685.6 ns |    37.24 ns |    106.26 ns |   1,679.3 ns |  1.1959 |    3752 B |
+|        TestStringConcat | 100 |   2,379.6 ns |   189.84 ns |    547.72 ns |   2,156.4 ns |  2.7008 |    8480 B |
+|  TestStringPlusOperator | 100 |   4,456.0 ns |   161.80 ns |    448.36 ns |   4,359.1 ns |  7.5607 |   23736 B |
+| TestStringInterpolation | 100 |   3,051.8 ns |   169.62 ns |    492.09 ns |   2,839.5 ns |  2.7008 |    8480 B |
+|  TestStringStringFormat | 100 |   6,711.3 ns |   133.04 ns |    239.90 ns |   6,751.8 ns |  2.7008 |    8480 B |
+|       TestStringReplace | 100 |     900.9 ns |    17.76 ns |     22.46 ns |     903.5 ns |       - |         - |
+|     TestStringSubstring | 100 |           NA |          NA |           NA |           NA |      NA |        NA |
+| TestStringSubstringLoop | 100 |  15,371.1 ns |   298.71 ns |    366.84 ns |  15,448.9 ns | 24.4751 |   76800 B |
+|         TestStringRegex | 100 | 158,873.7 ns | 3,551.24 ns | 10,359.13 ns | 157,497.2 ns |  3.4180 |   11200 B |
+
+Benchmarks with issues:
+  StringBenchmark.TestStringSubstring: DefaultJob [N=100]

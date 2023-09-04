@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>CodeBenchmark.src.Declaraction.DeclarationBenchmark-20230830-193708</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.7, Windows 10 (10.0.19045.3324/22H2/2022Update)
+Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+.NET SDK 7.0.400
+  [Host]     : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>              Method</th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>TestArrayClassDeclaration</td><td>100</td><td>1,711.9 ns</td><td>33.83 ns</td><td>65.18 ns</td><td>2.1992</td><td>6.74 KB</td>
+</tr><tr><td>TestArrayStructDeclaration</td><td>100</td><td>1,271.2 ns</td><td>24.91 ns</td><td>34.92 ns</td><td>1.4343</td><td>4.4 KB</td>
+</tr><tr><td>TestClassDeclaration</td><td>100</td><td>1,466.4 ns</td><td>29.36 ns</td><td>33.82 ns</td><td>1.9379</td><td>5.94 KB</td>
+</tr><tr><td>TestStructDeclaration</td><td>100</td><td>983.2 ns</td><td>18.52 ns</td><td>34.78 ns</td><td>0.9174</td><td>2.81 KB</td>
+</tr></tbody></table>
+</body>
+</html>

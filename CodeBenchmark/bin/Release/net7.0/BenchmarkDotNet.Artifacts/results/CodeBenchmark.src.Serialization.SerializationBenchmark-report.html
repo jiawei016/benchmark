@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>CodeBenchmark.src.Serialization.SerializationBenchmark-20230829-235247</title>
+<title>CodeBenchmark.src.Serialization.SerializationBenchmark-20230830-181036</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,20 +16,17 @@
 BenchmarkDotNet v0.13.7, Windows 10 (10.0.19045.3324/22H2/2022Update)
 Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
 .NET SDK 7.0.400
-  [Host]     : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
-  DefaultJob : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+  [Host] : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
 </code></pre>
-<pre><code></code></pre>
+<pre><code>Job=InProcess  Toolchain=InProcessEmitToolchain  
+</code></pre>
 
 <table>
-<thead><tr><th>           Method</th><th>N</th><th>Mean</th><th>Error</th><th>Ratio</th><th>RatioSD</th><th>Alloc Ratio</th>
+<thead><tr><th>            Method</th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Allocated</th><th>Alloc Ratio</th>
 </tr>
-</thead><tbody><tr><td>JsonToJObjectTest</td><td>100</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>?</td>
-</tr><tr><td>JsonToObjectTest</td><td>100</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>?</td>
-</tr><tr><td>XmlToObjectTest</td><td>100</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>?</td>
-</tr><tr><td>XmlPrepTimeIncludedTest</td><td>100</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>?</td>
-</tr><tr><td>XmlPrepTimeExcludedTest</td><td>100</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>?</td>
-</tr><tr><td>ProtoBufToObjectTest</td><td>100</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>?</td>
+</thead><tbody><tr><td>JsonToJObjectTest</td><td>1000</td><td>23.55 ms</td><td>0.470 ms</td><td>1.378 ms</td><td>1.52</td><td>0.08</td><td>6812.5000</td><td>20.42 MB</td><td>2.38</td>
+</tr><tr><td>JsonToObjectTest</td><td>1000</td><td>15.60 ms</td><td>0.262 ms</td><td>0.269 ms</td><td>1.00</td><td>0.00</td><td>2843.7500</td><td>8.57 MB</td><td>1.00</td>
+</tr><tr><td>JsonToJsonSerializerTest</td><td>1000</td><td>NA</td><td>NA</td><td>NA</td><td>?</td><td>?</td><td>NA</td><td>NA</td><td>?</td>
 </tr></tbody></table>
 </body>
 </html>

@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Running;
 using CodeBenchmark.src.Boxing;
 using CodeBenchmark.src.CollectionReturnType;
+using CodeBenchmark.src.Declaraction;
 using CodeBenchmark.src.Dynamic;
 using CodeBenchmark.src.ForLoop;
 using CodeBenchmark.src.Serialization;
@@ -17,7 +18,8 @@ public class Program
             "4. SyncAsync",
             "5. ForLoop",
             "6. CollectionReturnType",
-            "7. StringBenchmark"
+            "7. StringBenchmark",
+            "8. DeclarationBenchmark"
         };
     static void Main(string[] args)
     {
@@ -48,6 +50,9 @@ public class Program
                 break;
             case "7":
                 var stringbenchmark = BenchmarkRunner.Run<StringBenchmark>();
+                break;
+            case "8":
+                var declarebenchmark = BenchmarkRunner.Run<DeclarationBenchmark>();
                 break;
         }
 
